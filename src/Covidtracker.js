@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect ,useMemo} from 'react'
 import axios from 'axios'
 
 export default function CovidTracker({ updateCountry }) {
 
     const [countries, setCountries] = useState([])
 
-    const api = axios.create({
-        baseURL: 'https://cors-anywhere.herokuapp.com/http://api.covid19api.com',
+    const api = useMemo(() => axios.create({
+        baseURL: 'https://api.covid19api.com',
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*'
         }
-    })
+    }),[]);
     useEffect(() => { api.get('/countries').then(res => setCountries(_ => res.data)) }
         , [updateCountry,api]);
 

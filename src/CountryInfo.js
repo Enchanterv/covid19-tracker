@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState,useMemo } from 'react'
 import DataGraph from './DataGraph'
 
 
@@ -7,9 +7,9 @@ export default function CountryInfo({ selectedCountry }) {
 
     const [countryData, setCountryData] = useState([selectedCountry]);
     const [apiData, setApiData] = useState([]);
-    const api = axios.create({ baseURL: `https://cors-anywhere.herokuapp.com/http://api.covid19api.com`, method: 'get' })
+    const api = useMemo(() =>axios.create({ baseURL: `https://api.covid19api.com`, method: 'get' }),[])
 
-    React.useEffect(() => { api.get(`/total/country/${selectedCountry}`)
+    React.useEffect(() =>{api.get(`/total/country/${selectedCountry}`)
     .then(res =>{setApiData(_=>res.data) ;
         setCountryData(_ => res.data[res.data.length -1])}) }, [selectedCountry,api])
 
