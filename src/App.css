@@ -1,10 +1,12 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.App { 
+  display:flex;
+ align-items: center;
+  flex-direction: column;
+    background-image: url(./background1.jpg);
+    height: 100%; 
+    background-position:50% 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .App-header {
@@ -17,16 +19,94 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.heading{
+  margin: 1.5em 0 0.1em;
+ font-size:xx-large;
+ font-weight: 500;
+ padding:12px;
+ border: black dotted 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
 }
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 30em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+  margin:auto;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+
+.country-data{
+  display: flex; 
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row; margin:auto;
+  opacity: 1;
+}
+.data-graph{
+  flex-grow: 3;
+  }
+.data-records{
+  max-width: "200px";
+flex-grow: 1;
+}
+
+
+.data{
+  padding:4px;
+  display: flex;
+  border:solid #111111 1px;
+}
+
+.c{background: linear-gradient(to right,#ffffff,#1111ff);}
+.d{background: linear-gradient(to right,#ffffff,#ff1111);}
+.a{background: linear-gradient(to right,#ffffff,#111111);}
+.r{background: linear-gradient(to right,#ffffff,#11ff11);}
