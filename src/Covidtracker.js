@@ -13,7 +13,7 @@ export default function CovidTracker({ updateCountry }) {
         }
     })
     useEffect(() => { api.get('/countries').then(res => setCountries(_ => res.data)) }
-        , [updateCountry]);
+        , [updateCountry,api]);
 
     let items = [];
     countries.forEach(c => items.push(<option key={c.Slug} value={c.Slug}>{c.Country}</option>));
