@@ -18,9 +18,9 @@ export default function CountryInfo({ selectedCountry }) {
         <DataGraph apiData={apiData}/>
         <div  className="data-records">
         
-        <div className="data c" >Confirmed <br/> {countryData?.Confirmed}</div>
-        <div className="data d">Deaths    <br/>  {countryData?.Deaths}</div>
-        <div className="data a">Active    <br/> {countryData?.Active}</div>
-        <div className="data r">Recovered <br/>  {countryData?.Recovered}</div>
+        <div className="data c" >Confirmed <br/> {countryData.Confirmed}</div>
+        <div className="data d">Deaths    <br/>  {countryData.Deaths}</div>
+        <div className="data a">Active    <br/> {countryData.Active}</div>
+        <div className="data r">Recovered <br/>  {countryData.Recovered}</div>
     </div></div>
 }
