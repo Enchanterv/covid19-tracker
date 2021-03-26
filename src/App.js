@@ -1,22 +1,13 @@
-import React,{useState} from 'react'
+import React from "react";
 
-import CovidTracker from './Covidtracker'
-import CountryInfo from './CountryInfo'
-import './App.css';
-
+import CovidTracker from "./Covidtracker";
+import "./App.css";
 
 function App() {
-
-const [selectedCountry,setSelectedCountry] =useState("Chile")
-
-const updateCountry = (country) => setSelectedCountry(_=> country);
-
   return (
-    <div className="App" >
+    <div className="App">
       <div className="heading">Covid 19 Tracker</div>
-<CovidTracker  updateCountry={updateCountry} />
-
-<CountryInfo selectedCountry={selectedCountry} />
+      <CovidTracker updateCountry/>
     </div>
   );
 }
